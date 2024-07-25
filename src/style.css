@@ -1,0 +1,73 @@
+:root {
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  --font-color: rgb(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  background: linear-gradient(125deg, rgb(36, 36, 228), rgb(171, 255, 180));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 32px;
+}
+
+body > h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+#locationInput {
+  border: none;
+  padding: 2px 3px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  outline: none;
+}
+
+#enterBtn {
+  font-size: 1.5rem;
+  border-radius: 4px;
+  bordeR: none;
+  padding: 2px 16px;
+}
+
+.result-container {
+  margin-top: 24px;
+  background-color: white;
+  border-radius: 12px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 60px;
+}
+
+.result-container #location {
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+.result-container #datetime {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
