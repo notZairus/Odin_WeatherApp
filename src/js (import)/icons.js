@@ -17,6 +17,11 @@ import showersNight from '../icons/showers-night.svg';
 import snowShowersDay from '../icons/snow-showers-day.svg';
 import snowShowersNight from '../icons/snow-showers-night.svg';
 import snow from '../icons/snow.svg';
+import thunderRain from '../icons/thunder-rain.svg';
+import thunderShowersDay from '../icons/thunder-showers-day.svg';
+import thunderShowersNight from '../icons/thunder-showers-night.svg';
+import thunder from '../icons/thunder.svg';
+import wind from '../icons/wind.svg';
 
 
 export const ICONS = {
@@ -35,5 +40,10 @@ export const ICONS = {
   showersNight,
   snowShowersDay,
   snowShowersNight,
-  snow
+  snow,
+  thunderRain,
+  thunderShowersDay,
+  thunderShowersNight,
+  thunder,
+  wind
 };

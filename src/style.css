@@ -11,7 +11,6 @@
 }
 
 body {
-  height: 100dvh;
   background-color: rgb(115, 115, 228);
   display: flex;
   flex-direction: column;
@@ -53,6 +52,7 @@ body > h1 {
 }
 
 .result-container {
+  width: 400px;
   margin-top: 24px;
   background-color: white;
   border-radius: 12px;
@@ -60,9 +60,11 @@ body > h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px 60px;
+  padding: 30px;
+  display: none;
+  opacity: 0;
 
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .result-container #location {
@@ -75,3 +77,8 @@ body > h1 {
   margin-top: 8px;
 }
 
+.result-container #icon {
+  margin-top: 32px;
+  width: 200px;
+  height: 200px;
+}

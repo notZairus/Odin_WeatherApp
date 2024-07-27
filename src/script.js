@@ -4,6 +4,7 @@ import { ICONS } from './js (import)/icons';
 
 
 
+//FUNCTIONS
 async function fetchWeatherData (location) {
   try {
     let response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}}?unitGroup=us&key=2YUX44XCGJ9DV4KRCSQH7SPUR&contentType=json`);
@@ -29,6 +30,20 @@ function displayData (data) {
   document.getElementById('datetime').textContent = format(dateTime, 'EEE') + " | " + format(dateTime, "PP") + " | " + format(dateTime, "h b");
 
   let currentCondition = data.currentConditions.icon;
+  let iconName = currentCondition
+  .split("-")
+  .map((word, index) => {
+    if (index === 0) {
+      return word;
+    } else {
+      let letters = word.split("");
+      letters[0] = letters[0].toUpperCase();
+      let Capitalizedword = letters.join("");
+      return Capitalizedword;
+    }
+  })
+  .join("");
+  document.getElementById('icon').src = ICONS[iconName];
 }
 
 function changeBgColor () {
@@ -37,9 +52,17 @@ function changeBgColor () {
 }
 
 
+
 setInterval(changeBgColor, 2000);
 
 document.getElementById('enterBtn').addEventListener('click', async () => {
+  let resultContainer = document.querySelector('.result-container');
+  resultContainer.style.display = "flex";
+
+  setTimeout(() => {
+    resultContainer.style.opacity = "1";
+  }, 50)
+  
   let input = document.getElementById('locationInput');
 
   let data = await fetchWeatherData(input.value);
