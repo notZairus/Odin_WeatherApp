@@ -27,7 +27,7 @@ function displayData (data) {
   
   let { resolvedAddress: location } = data;
   let locationParts = location.split(", ");
-  document.getElementById('location').textContent = locationParts[0] + ", " + locationParts[2];
+  document.getElementById('location').textContent = locationParts[0] + ", " + locationParts[locationParts.length - 1];
 
   let dateTime = new Date();
   document.getElementById('datetime').textContent = format(dateTime, 'EEE') + " | " + format(dateTime, "PP") + " | " + format(dateTime, "h b");
@@ -53,7 +53,6 @@ function displayData (data) {
 
   let desc = data.currentConditions.conditions;
   document.getElementById('description').textContent = desc.toUpperCase();
-  
 }
 
 function changeBgColor () {
