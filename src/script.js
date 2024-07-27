@@ -22,12 +22,18 @@ async function fetchWeatherData (location) {
 }
 
 function displayData (data) {
+
+  console.log(data);
+  
   let { resolvedAddress: location } = data;
   let locationParts = location.split(", ");
   document.getElementById('location').textContent = locationParts[0] + ", " + locationParts[2];
 
   let dateTime = new Date();
   document.getElementById('datetime').textContent = format(dateTime, 'EEE') + " | " + format(dateTime, "PP") + " | " + format(dateTime, "h b");
+
+  let temp = data.currentConditions.temp;
+  document.getElementById('temperature').textContent = `${temp} °F`;
 
   let currentCondition = data.currentConditions.icon;
   let iconName = currentCondition
@@ -44,13 +50,16 @@ function displayData (data) {
   })
   .join("");
   document.getElementById('icon').src = ICONS[iconName];
+
+  let desc = data.currentConditions.conditions;
+  document.getElementById('description').textContent = desc.toUpperCase();
+  
 }
 
 function changeBgColor () {
   const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   document.body.style.background = randomColor;
 }
-
 
 
 setInterval(changeBgColor, 2000);

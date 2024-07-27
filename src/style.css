@@ -17,6 +17,7 @@ body {
   align-items: center;
   position: relative;
   padding: 32px;
+  padding-bottom: 60px;
 
   transition: background-color 2s ease;
 }
@@ -24,7 +25,7 @@ body {
 body > h1 {
   color: white;
   font-size: 3rem;
-  letter-spacing: 4px;
+  letter-spacing: 8px;
   margin-bottom: 16px;
 }
 
@@ -77,8 +78,18 @@ body > h1 {
   margin-top: 8px;
 }
 
+.result-container #temperature {
+  margin-top: 40px;
+  font-size: 2rem;
+}
+
 .result-container #icon {
-  margin-top: 32px;
   width: 200px;
   height: 200px;
+}
+
+.result-container #description {
+  font-size: 1.7rem;
+  width: 100%;
+  text-align: center;
 }
