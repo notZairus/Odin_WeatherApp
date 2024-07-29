@@ -21,6 +21,7 @@ async function fetchWeatherData(location) {
 }
 
 function displayData(data) {
+  console.log(data);
   let { resolvedAddress: location } = data;
   let locationParts = location.split(", ");
   document.getElementById("location").textContent =
